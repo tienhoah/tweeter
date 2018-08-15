@@ -55,12 +55,18 @@ const data = [
 $(function() {
 
   function renderTweets(tweets) {
-
     for (var i = 0; i < tweets.length; i++){
       var $tweetItem = createTweetElement(tweets[i]);
       $('#tweet-area').append($tweetItem);
     }
   }
+
+  function loadTweets(cb){
+    $.get("/tweets").done(function(tweets) {
+      cb(tweets);
+    });
+  }
+
 
 
   function createTweetElement(tweetdb) {
@@ -106,7 +112,6 @@ $(function() {
     return $tweet;
   }
 
-  // renderTweets(data);
   var formSubmit = $("#tweet-post");
   formSubmit.on("submit", function(event) {
     event.preventDefault();
@@ -114,4 +119,5 @@ $(function() {
     console.log(inputData);
   });
 
+  loadTweets(renderTweets);
 });
