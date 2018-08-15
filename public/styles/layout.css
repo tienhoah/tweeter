@@ -18,8 +18,130 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+main.container {
+  margin: 0 auto;
+  width: 450px;
+  height: 1000px;
+  background-color: #fff;
+  padding-top: 150px
+
+  /*border-radius: 10px;}*/
+
+}
+
+h2 {
+  margin-bottom: 0;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-top: 10px;
+  padding-left: 1px;
+  border-bottom:  solid 1px;
+}
+
+
+textarea {
+  margin-top: 0.5em;
+  margin-left: 1em;
+  margin-right: 1em;
+  width: 395px;
+  height: 50px;
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
+input {
+  margin-left: 1em;
+  margin-top: 5px;
+
+}
+
+span.counter {
+  padding-left: 19em;
+
+}
+
+section.new-tweet {
+  border-radius: 10px;
+  background-color: #eee;
+  margin-right: 12px;
+  margin-left: 12px;
+  height: 160px;
+  border: 100px;
+  border: solid 1px #ccc;
+}
+
+article.tweet header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #eee;
+  height: 80px;
+  margin-top: -20.5px;
+
+}
+article.tweet {
+  margin-top: 20px;
+}
+
+#tweet-area {
+  border-radius: 10px;
+  border: solid 1px #ccc;
+  margin-right: 12px;
+  margin-left: 12px;
+  margin-top: 32px;
+}
+
+article.tweet header .userlogo {
+  float: left;
+  opacity: 0.5;
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+/*article.tweet header .userprofile{
+  float: left;
+}
+*/
+article.tweet header  .username {
+  float: left;
+  opacity: 0.5;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin: 0;
+}
+
+
+article.tweet header .usertag {
+  float: right;
+  opacity: 0.5;
+  padding-bottom: 30px;
+  padding-right: 20px;
+}
+
+article.tweet p.comment {
+  border-bottom: 1px solid #ccc;
+  height: 80px;
+  padding-left: 20px;
+}
+
+article.tweet footer {
+  height: 30px;
+}
+
+article.tweet footer i {
+  visibility: hidden;
+  float:right;
+  padding-right: 10px;
+}
+
+
+
+article.tweet footer .timestamp {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+
