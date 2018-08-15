@@ -73,52 +73,49 @@ section.new-tweet {
   border: solid 1px #ccc;
 }
 
-article.tweet header {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: #eee;
-  height: 80px;
-  margin-top: -20.5px;
-
-}
-article.tweet {
-  margin-top: 20px;
-}
-
 #tweet-area {
-  border-radius: 10px;
-  border: solid 1px #ccc;
+  height: 260px;
   margin-right: 12px;
   margin-left: 12px;
   margin-top: 32px;
 }
+article.tweet {
+  border: 1px solid #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 10px;
+}
+
+article.tweet header {
+  background-color: #eee;
+  height: 80px;
+  opacity: 1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+article.tweet header .username {
+  display: inline-block;
+  /*float*/
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+article.tweet header .usertag {
+  display: inline-block;
+  float:right;
+  padding-right: 10px;
+ /* padding-bottom: 30px;
+  padding-right: 20px;*/
+}
+
 
 article.tweet header .userlogo {
   float: left;
-  opacity: 0.5;
   width: 60px;
   height: 60px;
   margin-top: 10px;
   margin-left: 10px;
-}
-/*article.tweet header .userprofile{
-  float: left;
-}
-*/
-article.tweet header  .username {
-  float: left;
-  opacity: 0.5;
-  padding-top: 10px;
-  padding-left: 10px;
-  margin: 0;
-}
-
-
-article.tweet header .usertag {
-  float: right;
-  opacity: 0.5;
-  padding-bottom: 30px;
-  padding-right: 20px;
 }
 
 article.tweet p.comment {
@@ -128,20 +125,22 @@ article.tweet p.comment {
 }
 
 article.tweet footer {
-  height: 30px;
+  height: 20px;
+  margin-bottom: 10px;
 }
 
 article.tweet footer i {
   visibility: hidden;
   float:right;
   padding-right: 10px;
+  font-size: 24px;
+  /*opacity: 1px;*/
 }
-
-
 
 article.tweet footer .timestamp {
   padding-left: 20px;
   padding-bottom: 20px;
-}
+}*/
+
 
 
