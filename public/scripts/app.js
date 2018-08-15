@@ -105,6 +105,13 @@ $(function() {
 
     return $tweet;
   }
-  renderTweets(data);
+
+  // renderTweets(data);
+  var formSubmit = $("#tweet-post");
+  formSubmit.on("submit", function(event) {
+    event.preventDefault();
+    let inputData = $(this).serialize();
+    console.log(inputData);
+  });
 
 });
