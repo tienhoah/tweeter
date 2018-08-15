@@ -24,7 +24,7 @@ body {
 main.container {
   margin: 0 auto;
   width: 450px;
-  height: 1000px;
+  height: 1500px;
   background-color: #fff;
   padding-top: 150px
 
@@ -81,8 +81,7 @@ section.new-tweet {
 }
 article.tweet {
   border: 1px solid #ccc;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
   margin-bottom: 10px;
 }
 
