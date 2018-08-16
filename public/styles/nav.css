@@ -22,6 +22,21 @@
   line-height: 80px;
 }
 
+#nav-bar .compose {
+  float: right;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: black;
+  margin-top: 10px;
+  width: 120px;
+  height: 60px;
+  color: #00a087;
+}
+#nav-bar .compose:hover {
+  color: black;
+  /*border: 1px solid;*/
+
+}
 /*#nav-bar::after {
   content: "";
   display: table;

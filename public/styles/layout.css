@@ -29,7 +29,16 @@ main.container {
   padding-top: 150px
 }
 
-h2 {
+.new-tweet {
+  border-radius: 10px;
+  background-color: #eee;
+  margin-right: 12px;
+  margin-left: 11px;
+  border: solid 1px #ccc;
+
+}
+
+section.new-tweet h2 {
   margin-bottom: 0;
   margin-left: 16px;
   margin-right: 16px;
@@ -39,36 +48,35 @@ h2 {
 }
 
 
-textarea {
+section.new-tweet textarea {
   margin-top: 0.5em;
   margin-left: 1em;
   margin-right: 1em;
   width: 395px;
-  height: 50px;
+  height: 60px;
   padding-left: 3px;
   padding-top: 3px;
 }
 
-input {
-  margin-left: 1em;
+section.new-tweet p.error {
+  margin-left: 15px;
   margin-top: 5px;
+  margin-bottom: 5px;
+  font-style: italic;
+  font-weight: bold;
+  color: red;
+}
 
+section.new-tweet input {
+  margin-left: 1em;
+  margin-bottom: 10px;
 }
 
 span.counter {
-  padding-left: 19em;
-
+  float:right;
+  margin-right: 15px;
 }
 
-section.new-tweet {
-  border-radius: 10px;
-  background-color: #eee;
-  margin-right: 12px;
-  margin-left: 12px;
-  height: 160px;
-  border: 100px;
-  border: solid 1px #ccc;
-}
 
 #tweet-area {
   height: 260px;
