@@ -1,6 +1,4 @@
 $(function() {
-  var tweetArticle = $("article.tweet");
-  console.log(tweetArticle);
   $('body').on('mouseenter', 'article.tweet', function() {
     $(this).css("border", "1px solid #000");
     $(this).find("header").css('opacity', '1');
