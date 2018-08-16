@@ -22,7 +22,7 @@ $(function() {
 
   const textArea = $("textarea[name=text]");
   const composeBox = $("section.new-tweet");
-  const composeButton = $("button.compose")
+  const composeButton = $("button.compose");
 
   textArea.on('keydown', updateCharCount);
 
