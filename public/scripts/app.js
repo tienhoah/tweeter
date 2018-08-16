@@ -4,7 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(function() {
-
+  function renderTweet(tweets) {
+    for (var i = 0; i < tweets.length; i++){
+      if (i === tweets.length-1){
+        var $tweetNewestItem = createTweetElement(tweets[i]);
+        $('#tweet-area').prepend($tweetNewestItem);
+      }
+    }
+  }
   function renderTweets(tweets) {
     for (var i = 0; i < tweets.length; i++){
       var $tweetItem = createTweetElement(tweets[i]);
@@ -17,8 +24,6 @@ $(function() {
       cb(tweets);
     });
   }
-
-
 
   function createTweetElement(tweetdb) {
     var miliseconds = tweetdb["created_at"];
@@ -63,11 +68,26 @@ $(function() {
     return $tweet;
   }
 
+
   var formSubmit = $("#tweet-post");
   formSubmit.on("submit", function(event) {
     event.preventDefault();
-    let inputData = $(this).serialize();
-    console.log(inputData);
+
+    var inputData = $(this).serialize();
+    var error = $(this).find("p.error");
+
+    if (error.text() !== ""){
+      error.slideUp("fast");
+    }
+
+    if (inputData.length > 145) {
+      error.text("Over exceed tweet limit!!!");
+      error.slideDown("fast");
+    } else {
+      $.post("/tweets", inputData).done(function(tweets) {
+        loadTweets(renderTweet);
+      });
+    }
   });
 
   loadTweets(renderTweets);
