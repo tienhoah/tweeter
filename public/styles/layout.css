@@ -24,7 +24,6 @@ body {
 main.container {
   margin: 0 auto;
   width: 450px;
-  height: 1500px;
   background-color: #fff;
   padding-top: 150px
 }
@@ -79,7 +78,6 @@ span.counter {
 
 
 #tweet-area {
-  height: 260px;
   margin-right: 12px;
   margin-left: 12px;
   margin-top: 32px;
@@ -102,6 +100,7 @@ article.tweet header .username {
   display: inline-block;
   margin-top: 10px;
   padding-left: 10px;
+  font-size: 1.5em;
 }
 
 article.tweet header .usertag {
@@ -123,6 +122,8 @@ article.tweet p.comment {
   border-bottom: 1px solid #ccc;
   height: 80px;
   padding-left: 20px;
+  padding-right: 20px;
+  word-wrap: break-word;
 }
 
 article.tweet footer {

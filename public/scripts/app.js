@@ -1,80 +1,87 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 $(function() {
-  function renderTweet(tweets) {
-    for (var i = 0; i < tweets.length; i++){
-      if (i === tweets.length-1){
-        var $tweetNewestItem = createTweetElement(tweets[i]);
-        $('#tweet-area').prepend($tweetNewestItem);
-      }
-    }
-  }
-  function renderTweets(tweets) {
-    for (var i = 0; i < tweets.length; i++){
-      var $tweetItem = createTweetElement(tweets[i]);
-      $('#tweet-area').append($tweetItem);
-    }
+  function renderLastTweet(tweets) {
+    var newestTweet = tweets.slice(-1);
+
+    newestTweet.forEach(function(tweet) {
+      var $tweet = createTweetElement(tweet);
+      $('#tweet-area').prepend($tweet);
+    });
   }
 
-  function loadTweets(cb){
+  function renderAllTweets(tweets) {
+    tweets.forEach(function(tweet) {
+      var $tweet = createTweetElement(tweet);
+      $('#tweet-area').prepend($tweet);
+    });
+  }
+
+  function loadTweets(cb) {
     $.get("/tweets").done(function(tweets) {
       cb(tweets);
     });
   }
 
-  function createTweetElement(tweetdb) {
-    var miliseconds = tweetdb["created_at"];
-    var myCurDate = new Date().getTime();
-    var diffTime = myCurDate - miliseconds;
-    var totalDays = Math.floor(diffTime / 86400000);
+  function createHeader(user_header) {
+    var $outputHeader = $("<header>"),
+        $img          = $("<img>").addClass("userlogo"),
+        $h1           = $("<h1>").addClass("username"),
+        $p            = $("<p>").addClass("usertag"),
+        profilePic    = user_header['avatars']['small'];
 
-    var $tweet = $("<article>").addClass("tweet");
-    var $header = $("<header>");
-    var $footer = $("<footer>");
-    var $h1 = $("<h1>").addClass("username");
-    var $p_body = $("<p>").addClass("comment");
-    var $img = $("<img>").addClass("userlogo");
-    var $p_header = $("<p>").addClass("usertag");
-    var $i_retweet = $("<i>").addClass("fa fa-retweet");
-    var $i_heart = $("<i>").addClass("fa fa-heart");
-    var $i_flag = $("<i>").addClass("fa fa-flag");
-    var $span = $("<span>").addClass("timestamp");
+    $img.attr('src', `${profilePic}`);
+    $h1.text(user_header['name']);
+    $p.text(user_header['handle']);
 
-    $h1.text(tweetdb['user']['name']);
-    $p_header.text(tweetdb['user']['handle']);
-    profile_pic = tweetdb['user']['avatars']['small'];
-    profile_pic_add = `src="${profile_pic}"`;
-    $img.attr({src: `${profile_pic}`});
+    $img.appendTo($outputHeader);
+    $h1.appendTo($outputHeader);
+    $p.appendTo($outputHeader);
+
+    return $outputHeader;
+  }
+
+  function createFooter(tweet_timestamp) {
+    var $outputFooter = $("<footer>"),
+        $i_retweet    = $("<i>").addClass("fa fa-retweet"),
+        $i_heart      = $("<i>").addClass("fa fa-heart"),
+        $i_flag       = $("<i>").addClass("fa fa-flag"),
+        $span         = $("<span>").addClass("timestamp");
+
+    var currentDate = new Date().getTime(),
+        calDays     = currentDate - tweet_timestamp,
+        totalDays   = Math.round(calDays / 86400000);
+
     $span.text(`${totalDays} days`);
 
-    $p_body.text(tweetdb['content']['text']);
+    $span.appendTo($outputFooter);
+    $i_heart.appendTo($outputFooter);
+    $i_retweet.appendTo($outputFooter);
+    $i_flag.appendTo($outputFooter);
 
-    $h1.appendTo($header);
-    $img.appendTo($header);
-    $p_header.appendTo($header);
-    $tweet.append($header);
+    return $outputFooter;
+  }
 
-    $tweet.append($p_body);
+  function createTweetElement(tweetdb) {
+    var headerInfo = tweetdb['user'],
+        footerInfo = tweetdb['created_at'];
 
-    $span.appendTo($footer);
-    $i_heart.appendTo($footer);
-    $i_retweet.appendTo($footer);
-    $i_flag.appendTo($footer);
-    $tweet.append($footer);
+    var $tweet     = $("<article>").addClass("tweet"),
+        $p         = $("<p>").addClass("comment");
+
+    $p.text(tweetdb['content']['text']);
+
+    $tweet.append(createHeader(headerInfo));
+    $tweet.append($p);
+    $tweet.append(createFooter(footerInfo));
 
     return $tweet;
   }
-
 
   var formSubmit = $("#tweet-post");
   formSubmit.on("submit", function(event) {
     event.preventDefault();
 
-    var inputData = $(this).serialize();
-    var error = $(this).find("p.error");
+    var inputData = $(this).serialize(),
+        error     = $(this).find("p.error");
 
     if (error.text() !== ""){
       error.slideUp("fast");
@@ -85,10 +92,10 @@ $(function() {
       error.slideDown("fast");
     } else {
       $.post("/tweets", inputData).done(function(tweets) {
-        loadTweets(renderTweet);
+        loadTweets(renderLastTweet);
       });
     }
   });
 
-  loadTweets(renderTweets);
+  loadTweets(renderAllTweets);
 });
