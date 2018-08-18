@@ -25,9 +25,10 @@
 #nav-bar .compose {
   float: right;
   border-radius: 10px;
-  border: 1px solid;
   border-color: black;
   margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
   width: 120px;
   height: 60px;
   color: #00a087;
@@ -38,9 +39,6 @@
 }
 
 @media (max-width: 420px){
-  #nav-bar {
-    color:red;
-  }
   #nav-bar .header {
     display: none;
   }
