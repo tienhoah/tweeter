@@ -1,5 +1,9 @@
 
 $(function() {
+  const textArea = $("textarea[name=text]");
+  const composeBox = $("section.new-tweet");
+  const composeButton = $("button.compose");
+
   function findSibling(child, sibling){
     return $(child).parent().find(sibling);
   }
@@ -20,11 +24,7 @@ $(function() {
     setCounter(counter, diff);
   }
 
-  const textArea = $("textarea[name=text]");
-  const composeBox = $("section.new-tweet");
-  const composeButton = $("button.compose");
-
-  textArea.on('keydown', updateCharCount);
+  textArea.on('keyup', updateCharCount);
 
   composeButton.on("click", function(event) {
     composeBox.slideToggle("slow", function() {

@@ -32,14 +32,22 @@
   height: 60px;
   color: #00a087;
 }
+
 #nav-bar .compose:hover {
   color: black;
-  /*border: 1px solid;*/
+}
 
+@media (max-width: 420px){
+  #nav-bar {
+    color:red;
+  }
+  #nav-bar .header {
+    display: none;
+  }
 }
-/*#nav-bar::after {
-  content: "";
-  display: table;
-  clear: both;
+
+@media (max-width: 300px) {
+  #nav-bar .logo {
+    display: none;
+  }
 }
-*/

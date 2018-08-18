@@ -1,0 +1,162 @@
+main.container {
+  margin: 0 auto;
+  width: 40%;
+  background-color: #fff;
+  padding-top: 150px
+}
+
+.new-tweet {
+  border-radius: 10px;
+  background-color: #eee;
+  margin-right: 12px;
+  margin-left: 11px;
+  border: solid 1px #ccc;
+
+}
+
+section.new-tweet h2 {
+  margin-bottom: 0;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-top: 10px;
+  padding-left: 1px;
+  border-bottom:  solid 1px;
+}
+
+
+section.new-tweet textarea {
+  margin-top: 0.5em;
+  margin-left: 1em;
+  margin-right: 1em;
+  width: 93%;
+  height: 60px;
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
+section.new-tweet p.error {
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-style: italic;
+  font-weight: bold;
+  color: red;
+}
+
+section.new-tweet input {
+  margin-left: 1em;
+  margin-bottom: 10px;
+}
+
+span.counter {
+  float:right;
+  margin-right: 15px;
+}
+
+
+#tweet-area {
+  margin-right: 12px;
+  margin-left: 12px;
+  margin-top: 32px;
+}
+article.tweet {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  opacity: 0.75;
+}
+
+article.tweet header {
+  background-color: #eee;
+  height: 80px;
+  opacity: 1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+article.tweet header .username {
+  display: inline-block;
+  margin-top: 10px;
+  padding-left: 10px;
+  font-size: 1.25em;
+}
+
+article.tweet header .usertag {
+  display: inline-block;
+  float:right;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+
+article.tweet header .userlogo {
+  float: left;
+  height: 60px;
+  margin-top: 10px;
+  margin-left:10px;
+}
+
+article.tweet p.comment {
+  border-bottom: 1px solid #ccc;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  word-wrap: break-word;
+}
+
+article.tweet footer {
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+article.tweet footer i {
+  visibility: hidden;
+  float:right;
+  padding-right: 10px;
+  font-size: 24px;
+}
+
+article.tweet footer .timestamp {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+
+
+@media (min-width: 470px) and (max-width: 900px){
+  main.container {
+    width: 65%;
+  }
+}
+
+@media (max-width: 470px){
+  main.container {
+    width: 80%;
+  }
+  section.new-tweet textarea {
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 300px){
+  article.tweet header .usertag {
+    display: none;
+  }
+  article.tweet footer .timestamp {
+    display: none;
+  }
+  article.tweet header .userlogo {
+    display: none;
+  }
+  section.new-tweet textarea {
+    width: 80%;
+  }
+}
+
+@media (min-width: 901px) {
+  main.container {
+    width: 50%;
+  }
+}
+
