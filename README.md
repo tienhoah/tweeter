@@ -27,4 +27,4 @@ This is built responsively with different types of device and also accessible ou
 1. Install all dependencies (using the `npm install` command)''
 2. Start the web server using the `npm run local` command. The app will be served at <http://localhost:5000/>.
 3. Go to <http://localhost:5000/> in your browser.
-4. As mentioned, Tweeter app is also accessible from heroku app, which is served at <sheltered-forest-35765.herokuapp.com>.
+4. As mentioned, Tweeter app is also accessible from heroku app, which is served at <http://sheltered-forest-35765.herokuapp.com>.
