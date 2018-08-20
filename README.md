@@ -7,10 +7,10 @@ This is built responsively with different types of device and also accessible ou
 
 ## Final Product
 
-!["Screeshot of Tweeter - Main Page"]()
-!["Screeshot of Tweeter tweets with hover effect"]()
-!["Screeshot of Tweeter - over limit warning"]()
-!["Screeshot of Tweeter - empty tweet warning"]()
+!["Screeshot of Tweeter - Main Page"](https://github.com/tienhoah/tweeter/blob/master/docs/tweet-box.png)
+!["Screeshot of Tweeter tweets with hover effect"](https://github.com/tienhoah/tweeter/blob/master/docs/tweet-hover.png)
+!["Screeshot of Tweeter - over limit warning"](https://github.com/tienhoah/tweeter/blob/master/docs/tweet-overlimit.png)
+!["Screeshot of Tweeter - empty tweet warning"](https://github.com/tienhoah/tweeter/blob/master/docs/tweet-empty.png)
 
 ## Dependencies
 
